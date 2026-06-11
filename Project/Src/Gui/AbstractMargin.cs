@@ -14,7 +14,7 @@ namespace ICSharpCode.TextEditor
 {
     public delegate void MarginMouseEventHandler(AbstractMargin sender, Point mousepos, MouseButtons mouseButtons);
 
-    public delegate void MarginPaintEventHandler(AbstractMargin sender, Graphics g, Rectangle rect);
+    public delegate void MarginPaintEventHandler(AbstractMargin sender, Graphics g, in Rectangle rect);
 
     /// <summary>
     ///     This class views the line numbers and folding markers.
@@ -78,7 +78,7 @@ namespace ICSharpCode.TextEditor
             textArea.Invalidate();
         }
 
-        public virtual void Paint(Graphics g, Rectangle rect)
+        public virtual void Paint(Graphics g, in Rectangle rect)
         {
             Painted?.Invoke(this, g, rect);
         }

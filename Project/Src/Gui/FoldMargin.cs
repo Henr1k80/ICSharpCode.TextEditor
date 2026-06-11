@@ -29,7 +29,7 @@ namespace ICSharpCode.TextEditor
 
         public override bool IsVisible => textArea.TextEditorProperties.EnableFolding;
 
-        public override void Paint(Graphics g, Rectangle rect)
+        public override void Paint(Graphics g, in Rectangle rect)
         {
             if (rect.Width <= 0 || rect.Height <= 0)
                 return;
@@ -229,7 +229,7 @@ namespace ICSharpCode.TextEditor
 
         #region Drawing functions
 
-        private void DrawFoldMarker(Graphics g, RectangleF rectangle, bool isOpened, bool isSelected)
+        private void DrawFoldMarker(Graphics g, in RectangleF rectangle, bool isOpened, bool isSelected)
         {
             var foldMarkerColor = textArea.Document.HighlightingStrategy.GetColorFor("FoldMarker");
             var foldLineColor = textArea.Document.HighlightingStrategy.GetColorFor("FoldLine");

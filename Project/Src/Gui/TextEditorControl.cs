@@ -315,7 +315,7 @@ namespace ICSharpCode.TextEditor
             return yPos + fontHeight;
         }
 
-        private void DrawLine(Graphics g, LineSegment line, float yPos, RectangleF margin)
+        private void DrawLine(Graphics g, LineSegment line, float yPos, in RectangleF margin)
         {
             float xPos = 0;
             var fontHeight = Font.GetHeight(g);
