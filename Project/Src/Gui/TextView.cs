@@ -89,7 +89,7 @@ namespace ICSharpCode.TextEditor
 
         #region Paint functions
 
-        public override void Paint(Graphics g, in Rectangle rect)
+        public override void Paint(Graphics g, Rectangle rect)
         {
             if (rect.Width <= 0 || rect.Height <= 0)
                 return;
@@ -117,7 +117,7 @@ namespace ICSharpCode.TextEditor
                 {
 //                    var fvl = textArea.Document.GetVisibleLine(FirstVisibleLine);
                     var currentLine = textArea.Document.GetFirstLogicalLine(textArea.Document.GetVisibleLine(FirstVisibleLine) + y);
-                    PaintDocumentLine(g, currentLine, in lineRectangle);
+                    PaintDocumentLine(g, currentLine, lineRectangle);
                 }
             }
 
@@ -128,7 +128,7 @@ namespace ICSharpCode.TextEditor
             textArea.Caret.PaintCaret(g);
         }
 
-        private void PaintDocumentLine(Graphics g, int lineNumber, in Rectangle lineRectangle)
+        private void PaintDocumentLine(Graphics g, int lineNumber, Rectangle lineRectangle)
         {
             Debug.Assert(lineNumber >= 0);
             var bgColorBrush = GetBgColorBrush(lineNumber);
@@ -268,7 +268,7 @@ namespace ICSharpCode.TextEditor
             internal readonly TextMarker marker;
             internal readonly RectangleF drawingRect;
 
-            public MarkerToDraw(TextMarker marker, in RectangleF drawingRect)
+            public MarkerToDraw(TextMarker marker, RectangleF drawingRect)
             {
                 this.marker = marker;
                 this.drawingRect = drawingRect;
@@ -277,7 +277,7 @@ namespace ICSharpCode.TextEditor
 
         private readonly List<MarkerToDraw> markersToDraw = new List<MarkerToDraw>();
 
-        private void DrawMarker(TextMarker marker, in RectangleF drawingRect)
+        private void DrawMarker(TextMarker marker, RectangleF drawingRect)
         {
             // draw markers later so they can overdraw the following text
             markersToDraw.Add(new MarkerToDraw(marker, drawingRect));
@@ -1092,7 +1092,7 @@ namespace ICSharpCode.TextEditor
             return eolMarkerWidth;
         }
 
-        private void DrawVerticalRuler(Graphics g, in Rectangle lineRectangle)
+        private void DrawVerticalRuler(Graphics g, Rectangle lineRectangle)
         {
             var xpos = WideSpaceWidth*TextEditorProperties.VerticalRulerRow - textArea.VirtualTop.X;
             if (xpos <= 0)

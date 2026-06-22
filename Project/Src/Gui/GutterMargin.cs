@@ -51,7 +51,7 @@ namespace ICSharpCode.TextEditor
             numberStringFormat.Dispose();
         }
 
-        public override void Paint(Graphics g, in Rectangle rect)
+        public override void Paint(Graphics g, Rectangle rect)
         {
             if (rect.Width <= 0 || rect.Height <= 0)
                 return;

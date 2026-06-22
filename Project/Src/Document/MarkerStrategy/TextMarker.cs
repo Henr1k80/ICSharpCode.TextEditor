@@ -31,7 +31,7 @@ namespace ICSharpCode.TextEditor.Document
         {
         }
 
-        public TextMarker(int offset, int length, TextMarkerType textMarkerType, in Color color)
+        public TextMarker(int offset, int length, TextMarkerType textMarkerType, Color color)
         {
             if (length < 1) length = 1;
             this.offset = offset;
@@ -40,7 +40,7 @@ namespace ICSharpCode.TextEditor.Document
             Color = color;
         }
 
-        public TextMarker(int offset, int length, TextMarkerType textMarkerType, in Color color, in Color foreColor)
+        public TextMarker(int offset, int length, TextMarkerType textMarkerType, Color color, Color foreColor)
         {
             if (length < 1) length = 1;
             this.offset = offset;
